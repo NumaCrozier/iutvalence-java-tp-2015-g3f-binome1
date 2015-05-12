@@ -1,6 +1,6 @@
 package motus.iutvalence.tp3F;
 
-public enum Etats 
+public enum States 
 {
 BLUE,
 RED,
