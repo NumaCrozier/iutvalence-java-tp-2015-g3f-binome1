@@ -1,35 +1,42 @@
 package motus.iutvalence.tp3F;
 
-public class Game 
-{
-	public static void start()
-	{
+public class Game {
+	private static final int TURN_NUMBER = 20;
+
+	public static void start() {
 		// creation of the game's player
 		Player currentPlayer = new Player();
 		// asking the player's nickname
 		currentPlayer.askForNickname();
-		//building the game grid (with, for now, random letters)
+		// building the game grid (with, for now, random letters)
 		Grid gameGrid = new Grid();
-		/* TODO Debug - displays the gamegrid */
-		Grid.displayHiddenGrid(gameGrid);
 		// displays the star composed grid
+		Grid.displayHiddenGrid(gameGrid);
+		/* TODO Debug - displays the gamegrid */
 		System.out.println(gameGrid);
 		// displays the grid after having compared it to the player's entry
-		try 
+		for(int turnCounter = 0; turnCounter < TURN_NUMBER ; turnCounter++)
 		{
-		
-		Letter[] gridToDisplay = GameRound.gridsComparison(gameGrid, GameRound.proposeWord());
-		for(int counter = 0; counter < gameGrid.getGameGrid().length ; counter++)
-		{
-		System.out.print(gridToDisplay[counter]);
+		try {
+			String proposedWord = "";
+			proposedWord = GameRound.proposeWord();
+			Letter[] gridToDisplay = GameRound.gridsComparison(gameGrid,proposedWord);
+			for (int counter = 0; counter < gameGrid.getGameGrid().length; counter++) 
+				{
+				System.out.print(gridToDisplay[counter]);
+				}
+			// Now catching the case the player tries to enter more or less letters than
+			// the number of stars displayed
+			if(GameRound.isWordFound(gameGrid , proposedWord))break;
+			} 
+		catch (ArrayIndexOutOfBoundsException e) 
+			{
+			System.err.println("The proposed word is too long.");
+			}
+		catch (ProposedWordException e) 
+			{
+			System.err.println(e.getMessage());
+			}
 		}
-		// Now catching the case the player tries to enter more letters than the number of stars displayed
-		} catch (ArrayIndexOutOfBoundsException e) {
-		System.out.println("Entrez un mot ayant le même nombre de lettres que le mot à trouver s'il vous plait.");
-		}
-		
-		
-		
 	}
-	
 }
