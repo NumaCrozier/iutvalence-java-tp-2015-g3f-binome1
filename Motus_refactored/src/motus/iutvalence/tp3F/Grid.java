@@ -8,7 +8,7 @@ public class Grid
 	 * The grid that will be created and in which will be placed letters
 	 */
 	private char[] gameGrid;
-	
+
 	/**
 	 * The size of the game grid (in number of characters).
 	 */
@@ -22,7 +22,7 @@ public class Grid
 		this.gridSize = randomGridSizeChoice();
 		this.gameGrid = randomLetterChoice(this.gridSize);
 	}
-	
+
 	/**
 	 * Method to get the game grid.
 	 * @return char[]
@@ -31,7 +31,7 @@ public class Grid
 	{
 		return this.gameGrid;
 	}
-	
+
 	/**
 	 * Method that compare a character to the gamegrid, to know if it's in or not.
 	 * @param characterToCompare ( char )
@@ -43,11 +43,11 @@ public class Grid
 		for(int gridCover = 0 ; gridCover < gridToCover.length ; gridCover++)
 		{
 			if(gridToCover[gridCover] == characterToCompare)return true;
-			
+
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Method returning a character from it's position in the game grid.
 	 * @param characterNumero ( int )
@@ -57,7 +57,7 @@ public class Grid
 	{
 		return this.gameGrid[characterNumero];
 	}
-	
+
 	/**
 	 * Method that displays the game grid, but where letters are replaced by stars so the player can't see the word he has to find.
 	 * @param grilleDeJeu ( Grid )
@@ -110,5 +110,5 @@ public class Grid
 		}
 		return "Grille : "+ intermediateString;
 	}
-	
+
 }
