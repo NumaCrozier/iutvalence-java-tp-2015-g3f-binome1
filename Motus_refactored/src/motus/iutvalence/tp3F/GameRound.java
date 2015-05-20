@@ -14,13 +14,17 @@ public class GameRound
 	 */
 	private static Scanner scanner;
 
+	public GameRound() 
+	{
+		scanner = new Scanner(System.in);
+	}
+	
 	/**
 	 * Method that returns the proposed word typed by the player on the keyboard.
 	 * @return String
 	 */
-	public static String proposeWord()
+	public String proposeWord()
 	{
-		scanner = new Scanner(System.in);
 		System.out.println();
 		System.out.println("Propose a word");
 		String wordProposed = scanner.nextLine();
@@ -34,7 +38,7 @@ public class GameRound
 	 * @return Letter[]
 	 * @throws ProposedWordException
 	 */
-	public static Letter[] gridsComparison(Grid grid, String proposedWord)
+	public Letter[] gridsComparison(Grid grid, String proposedWord)
 			throws ProposedWordException
 	{
 		if(grid.getGameGrid().length > proposedWord.length())throw new ProposedWordException("The proposed word is too short.");
@@ -67,7 +71,7 @@ public class GameRound
 	 * @param proposedWord
 	 * @return boolean
 	 */
-	public static boolean isWordFound(Grid grid, String proposedWord)
+	public boolean isWordFound(Grid grid, String proposedWord)
 	{
 		for(int counterGridComparison = 0; counterGridComparison < proposedWord.length(); counterGridComparison++)
 		{

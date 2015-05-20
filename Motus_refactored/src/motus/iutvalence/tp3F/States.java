@@ -7,14 +7,17 @@ package motus.iutvalence.tp3F;
  */
 public enum States 
 {
+	
 /**
  *State when the letter isn't in the word to find.
  */
 BLUE,
+
 /**
  *State when the letter is in the word to find and at the right place. 
  */
 RED,
+
 /**
  * State when the letter is in the word to find but not at the right place.
  */

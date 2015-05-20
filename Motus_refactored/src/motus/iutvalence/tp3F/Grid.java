@@ -62,10 +62,10 @@ public class Grid
 	 * Method that displays the game grid, but where letters are replaced by stars so the player can't see the word he has to find.
 	 * @param grilleDeJeu ( Grid )
 	 */
-	public static void displayHiddenGrid(Grid grilleDeJeu)
+	public void displayHiddenGrid()
 	{
 		System.out.println("Grille : ");
-		for(int starsToDisplayCounter = 0; starsToDisplayCounter < grilleDeJeu.getGameGrid().length; starsToDisplayCounter++)
+		for(int starsToDisplayCounter = 0; starsToDisplayCounter < getGameGrid().length; starsToDisplayCounter++)
 		{
 			System.out.print(" * ");
 		}
