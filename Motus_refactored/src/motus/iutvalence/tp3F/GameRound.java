@@ -2,6 +2,8 @@ package motus.iutvalence.tp3F;
 
 import java.util.*;
 
+import motus.iutvalence.tp3F.model.States;
+
 /**
  * Class that contains all the tools used to play a game.
  * @author Antonin Metzler/Numa Crozier

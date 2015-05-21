@@ -1,4 +1,4 @@
-package motus.iutvalence.tp3F;
+package motus.iutvalence.tp3F.model;
 
 /**
  * Enumeration that contains the 3 different states letters can get. 

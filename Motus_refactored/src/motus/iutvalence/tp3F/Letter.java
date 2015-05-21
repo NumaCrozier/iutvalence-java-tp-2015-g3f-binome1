@@ -1,5 +1,7 @@
 package motus.iutvalence.tp3F;
 
+import motus.iutvalence.tp3F.model.States;
+
 /**
  * Class defining what a letter is (a character and a state) and allowing to display it correctly.
  * @author Antonin Metzler/Numa Crozier
