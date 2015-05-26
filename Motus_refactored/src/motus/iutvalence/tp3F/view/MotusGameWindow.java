@@ -1,7 +1,8 @@
 package motus.iutvalence.tp3F.view;
 
+import java.awt.Color;
 import java.awt.GridLayout;
-
+import javax.security.auth.login.CredentialExpiredException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;	
@@ -10,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class MotusGameWindow {
+	
+	 
 		public static void main(String[] args)
 		{
 			JFrame windowMotus = new JFrame();
@@ -17,15 +20,16 @@ public class MotusGameWindow {
 			JPanel westPanel = new JPanel(); 
 			JPanel centerPanel = new JPanel();
 			JPanel proposedWordPanel = new JPanel();
-			JPanel mainPanel = new JPanel(); 
+			JPanel mainPanel = new JPanel();
+			JPanel wordPanel = new JPanel();
+			JPanel foundWordPanel = new JPanel();
 			
 			JLabel nickname = new JLabel("Player's nickname");
 			JLabel nbTurns = new JLabel("The number of turns left");
 			
 			JTextField proposedWord = new JTextField("Propose a word");
 			
-			JButton submitWord = new JButton("Submit");
-						
+			JButton submitWord = new JButton("Submit");					
 //===================================================================================
 			windowMotus.setTitle("Motus");
 			windowMotus.setSize(600, 400);
@@ -48,9 +52,15 @@ public class MotusGameWindow {
 			proposedWordPanel.add(submitWord);
 			
 			centerPanel.setBorder(BorderFactory.createTitledBorder("Game"));
+			centerPanel.setLayout(new GridLayout(4, 1));
+			centerPanel.add(wordPanel);
+			centerPanel.add(foundWordPanel);
+			
 			
 			windowMotus.setContentPane(mainPanel);
+
 			
+
 			
 			
 			
